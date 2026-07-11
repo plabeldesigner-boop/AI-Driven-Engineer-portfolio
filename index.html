@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engine Hub — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="./public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="./index.html" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="./index.html" class="menu-link active">Overview</a>
+          <a href="./skills.html" class="menu-link">Technical Stack & Toolkit</a>
+          <a href="./experience.html" class="menu-link">System Architectural Experience</a>
+          <a href="./verification.html" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="./additional.html" class="menu-link">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="overview-page" style="max-width: 1100px; margin: 0 auto; padding: 104px 24px 64px;">
+  
+  <!-- Hero Section -->
+  <div class="hero-container">
+    <div class="hero-text-block">
+      <span class="legal-eyebrow" style="color: var(--google-blue);">SYSTEMS ARCHITECT & CYBERSECURITY ENGINEER</span>
+      <h1 class="hero-headline">
+        I build secure, scale-proof foundations for digital systems.
+      </h1>
+      <p class="hero-desc">
+        A systems engineer with a high-conviction mindset. I design and build robust multi-tenant backend engines, configure hardware-isolated mobile secure vaults, and establish secure telemetry grids. No generic templates, no technical compromises.
+      </p>
+      
+      <div class="btn-group" style="display: flex; gap: 12px; margin-top: 24px;">
+        <a href="./verification.html" class="btn-g primary" style="text-decoration: none;">Verify Code Ledgers &rarr;</a>
+        <a href="./verification.html#saas-monolith" class="btn-g secondary" style="text-decoration: none;">Launch Systems Console</a>
+      </div>
+    </div>
+    
+    <div class="hero-image-block">
+      <div class="profile-image-frame">
+        <img src="./public/images/New background image  Of mutasim billah (1).png" alt="Mutasim Billah" class="profile-photo" />
+        <div class="image-coordinate-tag">MUTASIM_NODE_01</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineering Mindset & Principles -->
+  <div style="margin-top: 64px;">
+    <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 12px; margin-bottom: 24px;">
+      <h2 style="font-size: 20px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px;">Engineering Principles & Mindset</h2>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 0;">The core execution guardrails that dictate my systems architecture design.</p>
+    </div>
+    
+    <div class="principles-grid">
+      <!-- Principle 1 -->
+      <div class="principle-card">
+        <h3><i class="fa-solid fa-shield-halved" style="color: var(--google-red);"></i> Zero-Trust by Default</h3>
+        <p>Security is never an afterthought. From hardware Keystore key isolation in mobile apps and double-submit CSRF buffer matching to file-threat ClamAV scans, I build layers designed to withstand analysis.</p>
+      </div>
+
+      <!-- Principle 2 -->
+      <div class="principle-card">
+        <h3><i class="fa-solid fa-network-wired" style="color: var(--google-blue);"></i> Scale-Proof Architecture</h3>
+        <p>Architecting multi-process monoliths designed for vertical stability. Utilizing Redis Pub/Sub core clustering and stateless session storage mappings to ensure expansion doesn't introduce code fragility.</p>
+      </div>
+
+      <!-- Principle 3 -->
+      <div class="principle-card">
+        <h3><i class="fa-solid fa-bolt" style="color: var(--google-yellow);"></i> AI-Accelerated Velocity</h3>
+        <p>Leveraging specialized AI development models to scaffold, audit, and patch systems code. Bypassing traditional cycle bottlenecks to deliver validated features at 4x normal velocity.</p>
+      </div>
+
+      <!-- Principle 4 -->
+      <div class="principle-card">
+        <h3><i class="fa-solid fa-code" style="color: var(--google-green);"></i> Zero Compromises</h3>
+        <p>Obsessive focus on clean, high-performance execution. No unnecessary bloat, no placeholders, and fully optimized memory and security boundaries across all platforms.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

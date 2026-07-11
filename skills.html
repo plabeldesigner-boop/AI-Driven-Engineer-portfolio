@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Stack & Toolkit — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="./public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="./index.html" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="./index.html" class="menu-link">Overview</a>
+          <a href="./skills.html" class="menu-link active">Technical Stack & Toolkit</a>
+          <a href="./experience.html" class="menu-link">System Architectural Experience</a>
+          <a href="./verification.html" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="./additional.html" class="menu-link">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="skills-page">
+  <div class="container" style="padding-top: 104px;">
+    
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2>Technical Stack & Toolkit Matrix</h2>
+      <p>A structured mapping of my systems engineering toolkit, organized by operational layers.</p>
+    </div>
+
+    <!-- GCP-style Matrix Grid -->
+    <div class="matrix-grid">
+      <!-- Category 1 -->
+      <div class="matrix-card">
+        <h3>Distributed Frameworks & Languages</h3>
+        <ul class="matrix-list">
+          <li>JavaScript (ES6+)</li>
+          <li>TypeScript</li>
+          <li>Dart</li>
+          <li>Node.js</li>
+          <li>Express 5 Monoliths</li>
+          <li>Redis Pub/Sub</li>
+          <li>BullMQ</li>
+          <li>Socket.IO Channels</li>
+        </ul>
+      </div>
+      
+      <!-- Category 2 -->
+      <div class="matrix-card">
+        <h3>Hardware Cryptography & Storage</h3>
+        <ul class="matrix-list">
+          <li>AES-256-GCM/CBC</li>
+          <li>Android Hardware Keystore</li>
+          <li>Cloudflare R2 (S3 API)</li>
+          <li>AWS S3 Object Storage</li>
+          <li>Mongoose DB Pipelines</li>
+          <li>connect-mongo Sessions</li>
+        </ul>
+      </div>
+      
+      <!-- Category 3 -->
+      <div class="matrix-card">
+        <h3>AI Automation Architectures</h3>
+        <ul class="matrix-list">
+          <li>Groq SDK Completion</li>
+          <li>Gemini API Multi-Model</li>
+          <li>Context-Aware Prompts</li>
+          <li>Automated Git Patching</li>
+          <li>Synthetic Media API</li>
+          <li>HeyGen Video Integration</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Architectural Experience — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="./public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="./index.html" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="./index.html" class="menu-link">Overview</a>
+          <a href="./skills.html" class="menu-link">Technical Stack & Toolkit</a>
+          <a href="./experience.html" class="menu-link active">System Architectural Experience</a>
+          <a href="./verification.html" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="./additional.html" class="menu-link">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="experience-page">
+  <div class="container" style="padding-top: 104px;">
+    
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2>System Architectural Experience</h2>
+      <p>Chronological production logs of scaled platforms and cryptographic systems built under my supervision.</p>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="experience-timeline">
+      <!-- Role 1: Rendolt -->
+      <div class="experience-record">
+        <div class="experience-meta">
+          <div>
+            <h3>Founder & Lead Architect</h3>
+            <p style="font-weight: 600; margin-bottom: 0;">Rendolt LLC</p>
+          </div>
+          <span class="experience-duration">2024 — PRESENT</span>
+        </div>
+        
+        <ul class="experience-achievements">
+          <li>Architected and deployed a multi-tenant client-delivery monolith supporting Stripe split-payment commissions and dynamic visual review feedback grids.</li>
+          <li>Engineered a high-performance Redis Pub/Sub cluster that handles stateless session routing, real-time Socket.IO chat sync, and live project tunnel links.</li>
+          <li>Created a Cloudflare R2 preview pipeline with automated 24-hour Node cron cleanup workers to automatically convert expired layouts.</li>
+          <li>Designed a coordinate-based feedback system using responsive relative viewport ratios (xPercent/yPercent) to map feedback points across various device sizes.</li>
+        </ul>
+        
+        <div style="margin-top: 16px; font-size: 13px;">
+          <a href="./verification.html#saas-monolith" style="font-weight: 600; text-decoration: none; color: var(--google-blue);">
+            <i class="fa-solid fa-shield-halved"></i> Verify Rendolt Code Ledgers & Blueprints &rarr;
+          </a>
+        </div>
+      </div>
+      
+      <!-- Role 2: Rendfile / Pulse AI -->
+      <div class="experience-record">
+        <div class="experience-meta">
+          <div>
+            <h3>Lead Mobile & Platforms Engineer</h3>
+            <p style="font-weight: 600; margin-bottom: 0;">Rendfile / Pulse AI</p>
+          </div>
+          <span class="experience-duration">2023 — 2024</span>
+        </div>
+        
+        <ul class="experience-achievements">
+          <li>Designed a zero-knowledge mobile secure storage vault, isolating encryption keys directly inside the Android Hardware Keystore system.</li>
+          <li>Implemented native WindowManager FLAG_SECURE hooks to block screenshot captures and screencasts across vault layouts.</li>
+          <li>Optimized Flutter system memory consumption by downscaling mobile isolates and garbage collectors for chunked large file processing.</li>
+          <li>Co-designed the Pulse AI Groq parser, translating natural language conversational changes into automated git patch sets committed and deployed in 30 seconds.</li>
+        </ul>
+        
+        <div style="margin-top: 16px; font-size: 13px;">
+          <a href="./verification.html#android-keystore" style="font-weight: 600; text-decoration: none; color: var(--google-blue);">
+            <i class="fa-solid fa-shield-halved"></i> Verify Rendfile Code Ledgers & Blueprints &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

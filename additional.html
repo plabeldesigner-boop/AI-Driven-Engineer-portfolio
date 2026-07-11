@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certifications & Operations — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="./public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="./index.html" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="./index.html" class="menu-link">Overview</a>
+          <a href="./skills.html" class="menu-link">Technical Stack & Toolkit</a>
+          <a href="./experience.html" class="menu-link">System Architectural Experience</a>
+          <a href="./verification.html" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="./additional.html" class="menu-link active">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="additional-page">
+  <div class="container" style="padding-top: 104px;">
+    
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2>Certifications & Operations</h2>
+      <p>Telemetry customizations, verified prompts, and certified growth integrations.</p>
+    </div>
+
+    <!-- Operations Grid -->
+    <div class="ops-grid" style="margin-bottom: 48px;">
+      <div class="ops-card">
+        <h3><i class="fa-solid fa-brain" style="color: var(--google-blue);"></i> Prompt Engineering & AI Pipelines</h3>
+        <p>Certified prompt design utilizing Groq & Gemini SDK configurations. Specialized in structuring context-aware instructions, routing prompt failovers, and generating automated git code updates via strict JSON parsing boundaries.</p>
+      </div>
+      
+      <div class="ops-card">
+        <h3><i class="fa-solid fa-chart-line" style="color: var(--google-green);"></i> High-ROAS Growth & Shopify Customization</h3>
+        <p>Development of fast-loading, conversion-optimized Shopify themes. Integrated technical SEO, microdata structured layouts, and Google/Facebook ads telemetry pipelines that output clean funnel statistics.</p>
+      </div>
+    </div>
+
+    <!-- Google Career Certificates Section -->
+    <div class="certifications-container">
+      <div class="section-header" style="border-left-color: var(--google-yellow);">
+        <h2>Verified Professional Certificates</h2>
+        <p>Audited credentials obtained from global training authorities.</p>
+      </div>
+      
+      <div class="cert-card-grid">
+        <!-- Certificate 1 -->
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="cert-info">
+            <h3>AI for Brainstorming</h3>
+            <div class="cert-issuer">Google Career Certificate &mdash; Issued via Coursera</div>
+            <div class="cert-actions">
+              <a href="./public/Certifcations/Coursera ai for brainstroming.pdf" target="_blank" class="cert-btn">
+                <i class="fa-solid fa-file-pdf"></i> View Certificate
+              </a>
+              <a href="./public/Certifcations/Coursera ai for brainstroming.pdf" download class="cert-btn">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa-solid fa-shield-halved" style="color: var(--google-green);"></i></div>
+          <div class="cert-info">
+            <h3>How to Use AI Responsibly</h3>
+            <div class="cert-issuer">Google Career Certificate &mdash; Issued via Coursera</div>
+            <div class="cert-actions">
+              <a href="./public/Certifcations/How to Use AI resposibly.pdf" target="_blank" class="cert-btn">
+                <i class="fa-solid fa-file-pdf"></i> View Certificate
+              </a>
+              <a href="./public/Certifcations/How to Use AI resposibly.pdf" download class="cert-btn">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
