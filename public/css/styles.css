@@ -1,0 +1,1125 @@
+/* ==========================================================================
+   GOOGLE CLOUD CONSOLE / MATERIAL CLEAN DESIGN SYSTEM (MULTI-PAGE)
+   Theme: Pure Light (#FFFFFF / #F8F9FA)
+   Transitions/Animations: STRICTLY ZERO (No transitions or transforms)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --google-blue: #1A73E8;
+  --google-red: #EA4335;
+  --google-yellow: #FBBC05;
+  --google-green: #34A853;
+  --text-dark: #202124;
+  --text-muted: #5F6368;
+  --border-light: #DADCE0;
+  --surface-hover: #F1F3F4;
+  --bg-white: #FFFFFF;
+  --bg-tinted: #F8F9FA;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-title: 'Product Sans', 'Inter', -apple-system, sans-serif;
+}
+
+/* Base Reset & Layout Constraints */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Page Spacers for Fixed Top Navbar */
+main {
+  padding-top: 104px; /* fixed top navbar (56px) + spacer */
+  padding-bottom: 64px;
+}
+
+/* Linear Structural Sections (Alternating Light Blocks) */
+section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+section:nth-of-type(even) {
+  background-color: var(--bg-tinted);
+}
+
+/* Typography Rules */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--google-blue);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   SECTION 1: SYSTEM NAVBAR CORE (FIXED TOP)
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.brand-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-dark);
+  letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+.brand-badge {
+  background-color: var(--surface-hover);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.menu-btn:hover {
+  background-color: var(--surface-hover);
+}
+
+.menu-drawer {
+  display: none;
+  position: absolute;
+  top: 46px;
+  right: 0;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(32, 33, 36, 0.12);
+  width: 260px;
+  padding: 8px 0;
+  z-index: 1100;
+}
+.menu-drawer.open {
+  display: block;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+}
+.menu-link:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-dark);
+}
+.menu-link.active {
+  color: var(--google-blue);
+  background-color: #E8F0FE;
+  border-left-color: var(--google-blue);
+}
+
+/* ==========================================================================
+   PAGE: OVERVIEW (INDEX PAGE HERO)
+   ========================================================================== */
+.overview-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-lead {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Status Indicator Pills */
+.status-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-tinted);
+  border: 1px solid var(--border-light);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.pill-dot.blue { background-color: var(--google-blue); }
+.pill-dot.green { background-color: var(--google-green); }
+.pill-dot.red { background-color: var(--google-red); }
+
+/* Google Cloud Style Buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.btn-g {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-g.primary {
+  background-color: var(--google-blue);
+  color: var(--bg-white);
+}
+.btn-g.primary:hover {
+  background-color: #1557B0;
+}
+
+.btn-g.secondary {
+  background-color: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-dark);
+}
+.btn-g.secondary:hover {
+  background-color: var(--surface-hover);
+}
+
+/* Profile Details Card */
+.profile-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.profile-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 12px;
+}
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.p-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.p-value {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   PAGE: TECHNICAL TOOLKIT & STACK MATRIX
+   ========================================================================== */
+.section-header {
+  border-left: 4px solid var(--google-blue);
+  padding-left: 12px;
+  margin-bottom: 24px;
+}
+.section-header h2 {
+  margin-bottom: 4px;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.matrix-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.matrix-card h3 {
+  color: var(--text-dark);
+  font-size: 15px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+.matrix-list {
+  list-style: none;
+}
+
+.matrix-list li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 6px 0;
+  border-bottom: 1px dashed #F1F3F4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.matrix-list li:last-child {
+  border-bottom: none;
+}
+
+.matrix-list li::before {
+  content: "▪";
+  color: var(--google-blue);
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   PAGE: SYSTEM ARCHITECTURAL EXPERIENCE
+   ========================================================================== */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experience-record {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.experience-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-meta h3 {
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.experience-duration {
+  font-family: var(--font-title);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  background-color: var(--bg-tinted);
+  border: 1px solid var(--border-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.experience-achievements {
+  list-style: none;
+}
+
+.experience-achievements li {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.experience-achievements li::before {
+  content: "✔";
+  color: var(--google-green);
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   PAGE: INTERACTIVE VERIFIABLE CV HUB (/verification)
+   ========================================================================== */
+.cv-viewer-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 56px; /* Offset for footer */
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cv-panel {
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--surface-hover);
+  padding: 32px 24px;
+}
+
+.cv-sheet {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #3C4043;
+}
+
+/* Resume Layout Elements */
+.cv-header {
+  border-bottom: 2px solid var(--text-dark);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cv-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.cv-title-sub {
+  font-size: 14px;
+  color: var(--google-blue);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cv-contact-info {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cv-section {
+  margin-bottom: 24px;
+}
+
+.cv-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cv-paragraph {
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.cv-job-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.cv-job-title {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cv-job-company {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.cv-job-dates {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.cv-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-bullets li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.cv-bullets li::before {
+  content: "▪";
+  color: var(--text-muted);
+  position: absolute;
+  left: 4px;
+  font-size: 8px;
+  top: 1px;
+}
+
+/* Verification Interactive Triggers & Claim Cards */
+.verify-trigger {
+  cursor: pointer;
+}
+
+.claim-node-card {
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-white);
+  border-radius: 4px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.claim-node-card:hover {
+  background-color: var(--surface-hover);
+}
+
+.claim-node-card.active-trigger {
+  background-color: #E8F0FE;
+  border-color: var(--google-blue);
+}
+
+.claim-node-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.claim-code {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.claim-node-card.active-trigger .claim-code {
+  color: var(--google-blue);
+}
+
+.claim-status {
+  font-size: 9px;
+  font-weight: 700;
+  color: #137333;
+  background-color: #E6F4EA;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.claim-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0;
+}
+
+.claim-node-card.active-trigger .claim-title {
+  color: var(--google-blue);
+}
+
+.claim-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Ledger Detail Panel (Right Pane) */
+.ledger-panel {
+  height: 100%;
+  overflow-y: auto;
+  border-left: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-white);
+}
+
+.ledger-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.ledger-placeholder i {
+  font-size: 48px;
+  color: var(--border-light);
+  margin-bottom: 16px;
+}
+
+.ledger-header {
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 24px;
+  background-color: var(--bg-tinted);
+  min-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ledger-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ledger-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.ledger-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.ledger-badge {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #E8F0FE;
+  color: var(--google-blue);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.ledger-body {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.ledger-body h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 4px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   PAGE: ADDITIONAL OPERATIONS & LEGAL CLAUSES
+   ========================================================================== */
+.ops-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.ops-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ops-card h3 {
+  font-size: 15px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ops-card p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* Certifications Section */
+.certifications-container {
+  margin-top: 32px;
+}
+
+.cert-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cert-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.cert-icon {
+  font-size: 28px;
+  color: var(--google-yellow);
+}
+
+.cert-info h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.cert-issuer {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.cert-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cert-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--google-blue);
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: var(--bg-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cert-btn:hover {
+  background-color: var(--surface-hover);
+}
+
+/* Legal Pages Styling (Privacy / Terms) */
+.legal-page {
+  padding-top: 104px;
+  padding-bottom: 64px;
+}
+
+.legal-header-block {
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.legal-eyebrow {
+  font-size: 11px;
+  color: var(--google-blue);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.legal-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.legal-lead {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+}
+
+.legal-section-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.legal-section-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.legal-paragraph {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER BLOCK
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-tinted);
+  border-top: 1px solid var(--border-light);
+  padding: 24px 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* For fixed layout viewports, pin footer bottom */
+.cv-viewer-layout + .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.footer-links a:hover {
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   PAGE: HOMEPAGE CONSOLE HERO & MINDSET
+   ========================================================================== */
+.legal-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.hero-text-block {
+  flex: 1.2;
+}
+
+.hero-headline {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--text-dark);
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.hero-image-block {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image-frame {
+  position: relative;
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-tinted);
+  border-radius: 8px;
+  padding: 12px;
+  width: 280px;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-photo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-coordinate-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(32, 33, 36, 0.8);
+  color: var(--bg-white);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.principle-card {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 24px;
+  background-color: var(--bg-white);
+}
+
+.principle-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.principle-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS (MOBILE/TABLET)
+   ========================================================================== */
+@media (max-width: 960px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 32px;
+    text-align: center;
+  }
+  .hero-headline {
+    font-size: 28px;
+  }
+  .hero-text-block .btn-group {
+    justify-content: center;
+  }
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+  .matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ops-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Fallback stack for verification split layout on mobile */
+  .cv-viewer-layout {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    margin-top: 56px;
+  }
+  .cv-panel {
+    height: auto;
+    overflow: visible;
+    padding: 16px;
+  }
+  .ledger-panel {
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+    height: auto;
+    overflow: visible;
+  }
+  .cv-viewer-layout + .site-footer {
+    position: static;
+    height: auto;
+    padding: 24px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .cv-sheet {
+    padding: 20px;
+  }
+  .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cv-contact-info {
+    text-align: left;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

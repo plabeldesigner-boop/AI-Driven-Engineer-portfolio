@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<main class="legal-page">
+  <div class="container">
+    <div class="legal-header-block">
+      <span class="legal-eyebrow">SYSTEMS POLICY</span>
+      <h1 class="legal-title">Privacy Policy & Telemetry Notice</h1>
+      <p class="legal-lead">This notice outlines the zero-knowledge parameters, database storage, and telemetry boundaries of the Mutasim Billah systems network.</p>
+    </div>
+
+    <div class="legal-content">
+      <div class="legal-section-card">
+        <h2 class="legal-section-heading">1. Zero-Knowledge local Storage Boundaries</h2>
+        <p class="legal-paragraph">All client data processed by Rendfile Manager vaults is encrypted locally at the hardware level using AES-256-GCM. The underlying keys are isolated inside the Android Hardware Keystore system. No unencrypted payloads or raw keys are ever transmitted over external networks or stored in secondary backups.</p>
+      </div>
+
+      <div class="legal-section-card">
+        <h2 class="legal-section-heading">2. Telemetry & Server Logging</h2>
+        <p class="legal-paragraph">The Mutasim Architecture Engine compiles basic request identifiers (including user agent, remote client hostnames, and timestamp markers) to monitor system health and prevent denial-of-service attempts. Form submissions ingest required fields exclusively and persist them securely in localized database modules. Telemetry logs undergo automated cron-purges every 24 hours.</p>
+      </div>
+
+      <div class="legal-section-card">
+        <h2 class="legal-section-heading">3. Cryptographic Audits & Verification</h2>
+        <p class="legal-paragraph">Security schemes are verifiable against static cryptographic designs. Code ledger specifications detailed across our platform verification matrices are public domain under MIT licensing boundaries, preserving audit capabilities for academic researchers and institutional networks.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

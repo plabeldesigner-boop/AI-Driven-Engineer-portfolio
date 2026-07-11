@@ -1,0 +1,178 @@
+<%- include('partials/header') %>
+
+<main class="console-page">
+  <div class="container">
+    
+    <!-- GCP Style Project Header -->
+    <div class="console-project-header">
+      <div class="project-info-block">
+        <span class="project-label">PROJECT</span>
+        <div class="project-selector">
+          <span class="project-name">mutasim-architecture-engine</span>
+          <span class="project-id">ID: mutasim-sys-v2</span>
+        </div>
+      </div>
+      
+      <div class="console-telemetry-bar">
+        <div class="telemetry-widget">
+          <span class="t-label">ENGINE STATUS</span>
+          <span class="t-value status-online">
+            <span class="status-dot-static"></span> ONLINE
+          </span>
+        </div>
+        <div class="telemetry-widget">
+          <span class="t-label">UPTIME</span>
+          <span class="t-value" id="uptime-clock">00:00:00</span>
+        </div>
+        <div class="telemetry-widget">
+          <span class="t-label">LOCATION</span>
+          <span class="t-value">IIUI Campus Node</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Grid Dashboard -->
+    <div class="dashboard-grid">
+      
+      <!-- Column 1: Specifications & Terminal -->
+      <div class="dashboard-column col-main">
+        
+        <!-- Specifications Card -->
+        <div class="gcp-card">
+          <div class="gcp-card-title">
+            <h3>Founder Specifications</h3>
+          </div>
+          <div class="gcp-card-content">
+            <table class="gcp-data-table">
+              <tbody>
+                <tr>
+                  <td class="td-key">Profile Node</td>
+                  <td class="td-val">Mutasim Billah</td>
+                </tr>
+                <tr>
+                  <td class="td-key">Operational Control</td>
+                  <td class="td-val">Founder & Lead Systems Architect at Rendolt LLC. Directing the scaling of multi-process monoliths and security shield ecosystems for commercial enterprises.</td>
+                </tr>
+                <tr>
+                  <td class="td-key">Core Specialization</td>
+                  <td class="td-val">Enterprise Node.js Backend Architectures, JWT Authentication Protocols, Cross-Platform Mobile Security (Keystore/FLAG_SECURE), and Search Indexing Optimization (SEO/ASO).</td>
+                </tr>
+                <tr>
+                  <td class="td-key">Academic Location</td>
+                  <td class="td-val">Islamic International University (IIUI). Specialize in software engineering core theories and systems design.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Terminal Shell Card -->
+        <div class="gcp-card terminal-card">
+          <div class="gcp-card-title">
+            <h3>Cloud Shell — mutasim_engine_init.sh</h3>
+          </div>
+          <div class="gcp-card-content">
+            <div id="console-terminal" class="console-terminal">
+              <!-- Logs injected by console.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Column 2: GCP Subsystems Services Grid -->
+      <div class="dashboard-column col-side">
+        <div class="gcp-card">
+          <div class="gcp-card-title">
+            <h3>System Subsystems & API Workspaces</h3>
+            <p style="font-size: 12px; margin-bottom: 0;">Select a service subsystem card below to inspect architecture logs and raw codebase snippets.</p>
+          </div>
+          <div class="gcp-card-content">
+            <div class="subsystems-grid">
+              
+              <!-- Subsystem 1 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('webmonoliths')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-01</span>
+                  <h4>Web Monoliths</h4>
+                </div>
+                <p>Node.js, Express 5, MongoDB Mongoose pipelines & Stripe commissions.</p>
+              </div>
+
+              <!-- Subsystem 2 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('mobile')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-02</span>
+                  <h4>Advanced Mobile</h4>
+                </div>
+                <p>Flutter Dart downscaled isolates & Expo companion integrations.</p>
+              </div>
+
+              <!-- Subsystem 3 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('security')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-03</span>
+                  <h4>Security Shields</h4>
+                </div>
+                <p>Android Hardware Keystores, AES-256-GCM & FLAG_SECURE window blocking.</p>
+              </div>
+
+              <!-- Subsystem 4 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('cloud')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-04</span>
+                  <h4>Cloud & DevOps</h4>
+                </div>
+                <p>Cloudflare R2 storage buckets & expirable preview cron autodeletion.</p>
+              </div>
+
+              <!-- Subsystem 5 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('growth')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-05</span>
+                  <h4>Growth & ASO</h4>
+                </div>
+                <p>Shopify fast thematic architectures, search sitemaps & ad telemetry.</p>
+              </div>
+
+              <!-- Subsystem 6 -->
+              <div class="subsystem-item-card" onclick="openWorkspace('genai')">
+                <div class="subsystem-meta">
+                  <span class="subsystem-code">SYS-06</span>
+                  <h4>GenAI & Video</h4>
+                </div>
+                <p>HeyGen automated avatar video pipelines & outbound LLM template parsers.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- GCP Style Dialog Workspace Overlay -->
+<div class="workspace-overlay" id="workspace-overlay">
+  <div class="workspace-panel">
+    <div class="workspace-header">
+      <div class="ws-header-brand">
+        <span class="ws-code-badge" id="ws-tag">SYS-00</span>
+        <h2 id="ws-title" class="ws-panel-title">Subsystem Workspace</h2>
+      </div>
+      <button class="ws-close-btn" onclick="closeWorkspace()">
+        <i class="fa-solid fa-xmark"></i> Close
+      </button>
+    </div>
+    
+    <div class="workspace-body" id="ws-content">
+      <!-- Injected by console.js -->
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Scripts -->
+<script src="/js/console.js" defer></script>

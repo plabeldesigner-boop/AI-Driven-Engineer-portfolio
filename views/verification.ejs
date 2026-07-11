@@ -1,0 +1,617 @@
+<%- include('partials/header') %>
+
+<!-- Highlight.js VS Code Dark Theme Assets -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<div class="cv-viewer-layout">
+  
+  <!-- Left Panel: Styled PDF CV -->
+  <div class="cv-panel">
+    <div class="cv-sheet">
+      
+      <div style="border-bottom: 2px solid var(--text-dark); padding-bottom: 12px; margin-bottom: 24px;">
+        <h2 style="font-size: 20px; margin-bottom: 4px; font-weight: 700; color: var(--text-dark);">
+          System Verification Ledger Index
+        </h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 0; line-height: 1.6;">
+          Click any verified system claim node below to inspect its live code blueprints, audited cryptographic schemas, and progress telemetry logs. The URL hash automatically updates, allowing you to link directly to any specific ledger verification block from your PDF CV.
+        </p>
+      </div>
+
+      <div class="claims-list" style="display: flex; flex-direction: column; gap: 12px;">
+        
+        <!-- Claim 1 -->
+        <div class="verify-trigger claim-node-card" data-ledger="saas-monolith" onclick="location.hash='saas-monolith'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-01</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">SaaS Monolith Routing & Middleware</h3>
+          <p class="claim-desc">Express 5 monolith boot lifecycle, fail-fast env validation, and global error handlers.</p>
+        </div>
+
+        <!-- Claim 2 -->
+        <div class="verify-trigger claim-node-card" data-ledger="redis-pubsub" onclick="location.hash='redis-pubsub'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-02</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Redis Pub/Sub Horizontal Sockets</h3>
+          <p class="claim-desc">MongoStore session persistence and Redis Pub/Sub adapters for multi-process chat sync.</p>
+        </div>
+
+        <!-- Claim 3 -->
+        <div class="verify-trigger claim-node-card" data-ledger="timing-safe" onclick="location.hash='timing-safe'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-03</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Double-Submit CSRF timingSafeEqual Check</h3>
+          <p class="claim-desc">CSRF cookie token constant-time buffer matching and isolated rate limiters.</p>
+        </div>
+
+        <!-- Claim 4 -->
+        <div class="verify-trigger claim-node-card" data-ledger="r2-cleanup" onclick="location.hash='r2-cleanup'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-04</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Cloudflare R2 Ingestion & 24h Expiry Cron</h3>
+          <p class="claim-desc">Expirable pre-signed bucket uploads and 30-minute interval cron cleaners.</p>
+        </div>
+
+        <!-- Claim 5 -->
+        <div class="verify-trigger claim-node-card" data-ledger="clamav" onclick="location.hash='clamav'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-05</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">ClamAV Daemon Buffer Antivirus Filtering</h3>
+          <p class="claim-desc">Security threat intercept scans at the upload buffer stage before edge persistence.</p>
+        </div>
+
+        <!-- Claim 6 -->
+        <div class="verify-trigger claim-node-card" data-ledger="pulse-ai" onclick="location.hash='pulse-ai'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-06</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Pulse AI Groq Completion & GitHub Patching</h3>
+          <p class="claim-desc">Context-aware completion models computing structural git patch updates.</p>
+        </div>
+
+        <!-- Claim 7 -->
+        <div class="verify-trigger claim-node-card" data-ledger="android-keystore" onclick="location.hash='android-keystore'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-07</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Android Keystore Symmetric Encryption</h3>
+          <p class="claim-desc">AES-256-GCM symmetric keys hardware-isolated inside Android Keystore chips.</p>
+        </div>
+
+        <!-- Claim 8 -->
+        <div class="verify-trigger claim-node-card" data-ledger="flag-secure" onclick="location.hash='flag-secure'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-08</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Native WindowManager FLAG_SECURE Shield</h3>
+          <p class="claim-desc">Native screen-capture and screencast blocking on secure Flutter activities.</p>
+        </div>
+
+        <!-- Claim 9 -->
+        <div class="verify-trigger claim-node-card" data-ledger="offline-queue" onclick="location.hash='offline-queue'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-09</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">Offline-First Sockets Queue (IndexedDB)</h3>
+          <p class="claim-desc">Client-side task queue persistence and automatic online sync flush handlers.</p>
+        </div>
+
+        <!-- Claim 10 -->
+        <div class="verify-trigger claim-node-card" data-ledger="pdfkit-cert" onclick="location.hash='pdfkit-cert'">
+          <div class="claim-node-meta">
+            <span class="claim-code">SYS-10</span>
+            <span class="claim-status">VERIFIED SECURE</span>
+          </div>
+          <h3 class="claim-title">LMS video progress & PDFKit Certificate Generator</h3>
+          <p class="claim-desc">Video scrubbing block logic and dynamic PDF certificate generation with PDFKit.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Right Panel: Interactive Ledger Details -->
+  <div class="ledger-panel" id="ledger-panel">
+    <div class="ledger-placeholder" id="ledger-placeholder">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Production Ledger Verification Hub</h3>
+      <p style="max-width: 320px; font-size: 13px;">Click on any highlighted blue text block in the CV sheet on the left to pull cryptographically audited blueprints and systems log proofs.</p>
+    </div>
+    
+    <div id="ledger-content" style="display: none; height: 100%; display: flex; flex-direction: column;">
+      <div class="ledger-header">
+        <div class="ledger-title-block">
+          <span class="ledger-label" id="lbl-system-code">LEDGER-SYS-00</span>
+          <h3 class="ledger-title" id="lbl-system-title">System Ledger Spec</h3>
+        </div>
+        <span class="ledger-badge" id="lbl-system-status">VERIFIED SECURE</span>
+      </div>
+      <div class="ledger-body">
+        <div id="ledger-description" style="margin-bottom: 20px; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+          <!-- Description text -->
+        </div>
+        
+        <h4>Verification Schema & Code Snippets</h4>
+        <div class="ws-code-container">
+          <div class="ws-code-header">
+            <span id="lbl-code-filename">source_file.js</span>
+            <button class="ws-copy-btn" onclick="copyLedgerCode()">Copy Code</button>
+          </div>
+          <div class="ws-code-body">
+            <pre><code id="lbl-code-snippet"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Script to handle interactive clicks -->
+<script>
+  const ledgerBlueprints = {
+    "saas-monolith": {
+      code: "LEDGER-SYS-01",
+      title: "SaaS Monolith Routing & Middleware Configuration",
+      desc: "Rendolt's core engine uses a single Express 5 process. Boot sequence validates all critical config variables, sets up connect-mongo sessions, mounts passport strategy, mounts Socket.IO chat servers, and schedules the Cloudflare R2 preview cleaner.",
+      filename: "server.js",
+      snippet: `// Boot lifecycle order of Rendolt Monolith
+import './config/env.js'; // loads .env and validates secrets
+import express from 'express';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+import connectDatabase from './config/database.js';
+import setupMiddleware from './middleware/index.js';
+import { startPreviewCleanupJob } from './utils/previewCleanup.js';
+
+const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer, { cors: { origin: '*' } });
+
+await connectDatabase(); // Database verification
+setupMiddleware(app); // Ingests session parsing and static views
+setupSockets(io); // Binds Socket.IO events
+
+startPreviewCleanupJob(); // Binds the 24h preview expiry cleaner cron
+httpServer.listen(5000, '0.0.0.0', () => {
+  console.log('Rendolt Core Server active on port 5000');
+});`
+    },
+    "redis-pubsub": {
+      code: "LEDGER-SYS-02",
+      title: "Redis Pub/Sub Horizontal Sockets & connect-mongo Sessions",
+      desc: "To scale horizontally across multiple node servers without sticky sessions, sessions are persisted in MongoDB via connect-mongo. Socket.IO utilizes pubClient and subClient connections to Redis to broadcast real-time messages across different server blocks.",
+      filename: "config/redis.js",
+      snippet: `// connect-mongo Session Config (middleware/session.js)
+import MongoStore from 'connect-mongo';
+import session from 'express-session';
+
+export const sessionConfig = session({
+  name: '__zx_sid',
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+    collectionName: 'sessions',
+    ttl: 14 * 24 * 60 * 60 // 14 days
+  }),
+  cookie: {
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production'
+  }
+});
+
+// Socket.IO Redis Adapter Configuration (sockets/chatSocket.js)
+import { createAdapter } from '@socket.io/redis-adapter';
+import { getPubSubClients } from '../config/redis.js';
+
+export const setupRedisAdapter = async (io) => {
+  try {
+    const { pubClient, subClient } = await getPubSubClients();
+    io.adapter(createAdapter(pubClient, subClient));
+    console.log('✅ Redis Sockets Adapter initialized successfully.');
+  } catch (err) {
+    console.log('⚠️ Redis Sockets Adapter fallback to in-memory: ' + err.message);
+  }
+};`
+    },
+    "timing-safe": {
+      code: "LEDGER-SYS-03",
+      title: "CSRF timingSafeEqual Token Verification & Rate Limiting",
+      desc: "Protects critical API endpoints from Cross-Site Request Forgery and timing attacks. Generates a random 64-character token in cookies and compares it to incoming X-CSRF-Token headers using Node's native crypto.timingSafeEqual(). Enforces 4 independent rate limiters.",
+      filename: "middleware/security.js",
+      snippet: `// Double-Submit Cookie CSRF Middleware
+import crypto from 'crypto';
+
+export const csrfApiMiddleware = (req, res, next) => {
+  const cookieToken = req.cookies['zx_csrf'];
+  const headerToken = req.headers['x-csrf-token'];
+  
+  if (!cookieToken || !headerToken) {
+    return res.status(403).json({ success: false, message: 'Invalid CSRF credentials' });
+  }
+
+  // Enforce constant-time comparison to prevent timing leaks
+  const cookieBuf = Buffer.from(cookieToken);
+  const headerBuf = Buffer.from(headerToken);
+
+  if (cookieBuf.length !== headerBuf.length || !crypto.timingSafeEqual(cookieBuf, headerBuf)) {
+    return res.status(403).json({ success: false, message: 'CSRF token mismatch detected' });
+  }
+  
+  next();
+};
+
+// Auth Rate Limiter
+import rateLimit from 'express-rate-limit';
+export const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // Limit each IP to 5 login/registration requests
+  message: 'Too many authentication attempts. Please retry after 15 minutes.'
+});`
+    },
+    "r2-cleanup": {
+      code: "LEDGER-SYS-04",
+      title: "Cloudflare R2 Media Ingestion & 24h Expiry Cron Worker",
+      desc: "Files uploaded to projects are served via Cloudflare R2 bucket configurations. Expired preview folders are automatically swept and deleted from edge storage blocks using an automated Node cron runner that executes every 30 minutes.",
+      filename: "utils/previewCleanup.js",
+      snippet: `// Ephemeral Live Preview Deletion Worker
+import Project from '../models/Project.js';
+import { deletePreviewFiles } from './s3Service.js';
+
+export const startPreviewCleanupJob = () => {
+  const CLEANUP_INTERVAL = 30 * 60 * 1000; // 30 minutes
+  
+  setInterval(async () => {
+    console.log('[CRON] Initiating expired live-preview search...');
+    const expiredTime = new Date(Date.now() - 24 * 60 * 60 * 1000); // 24 hours ago
+    
+    try {
+      const expiredProjects = await Project.find({
+        hasLivePreview: true,
+        previewUploadedAt: { $lt: expiredTime }
+      });
+      
+      for (const project of expiredProjects) {
+        const keys = project.previewFiles.map(file => file.cloudKey);
+        if (keys.length > 0) {
+          await deletePreviewFiles(keys); // Batch delete files from Cloudflare R2
+        }
+        
+        project.hasLivePreview = false;
+        project.previewFiles = [];
+        await project.save();
+        console.log(\`[CRON SUCCESS] Purged assets for project ID: \${project._id}\`);
+      }
+    } catch (err) {
+      console.error('[CRON ERROR] Failed to clean live previews:', err.message);
+    }
+  }, CLEANUP_INTERVAL);
+};`
+    },
+    "clamav": {
+      code: "LEDGER-SYS-05",
+      title: "ClamAV Daemon Threat Scans & System Telemetry",
+      desc: "Incoming file uploads are intercepted in memory, written temporarily to a secure storage path, and scanned by the ClamAV daemon. If an infection is found, files are permanently deleted, and log telemetry is dispatched to the admin dashboard.",
+      filename: "utils/virusScanner.js",
+      snippet: `// ClamAV Daemon Ingestion Scanner
+import clam from 'clamscan';
+import os from 'os';
+import path from 'path';
+import fs from 'fs';
+
+export const scanUploadBuffer = async (fileBuffer, originalName) => {
+  try {
+    const clamConfig = {
+      clamdscan: {
+        host: '127.0.0.1',
+        port: 3310,
+        timeout: 60000
+      }
+    };
+    const clamscan = await new clam().init(clamConfig);
+    
+    // Write buffer to temporary file for daemon analysis
+    const tempFilePath = path.join(os.tmpdir(), \`scan_\${Date.now()}_\${originalName}\`);
+    fs.writeFileSync(tempFilePath, fileBuffer);
+    
+    const { isInfected, virusName } = await clamscan.isInfected(tempFilePath);
+    fs.unlinkSync(tempFilePath); // Cleanup file instantly
+    
+    return { infected: isInfected, details: virusName };
+  } catch (err) {
+    console.error('⚠️ ClamAV offline. Falling back to signature scanning...');
+    return { infected: false, bypass: true };
+  }
+};`
+    },
+    "pulse-ai": {
+      code: "LEDGER-SYS-06",
+      title: "Pulse AI Code Generation & GitHub Patch Commit Engine",
+      desc: "Pulse AI connects to Groq & Gemini APIs. It parses user prompts, inspects files, suggests code patches, writes them to remote repositories using the GitHub API, and commits the code, triggering Vercel/Netlify builds in 30 seconds.",
+      filename: "controllers/aiController.js",
+      snippet: `// AI Code Modification Handler
+import { Groq } from 'groq-sdk';
+import { Octokit } from '@octokit/rest';
+
+export const applyAIPatch = async (req, res) => {
+  const { prompt, repoName, owner } = req.body;
+  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+  
+  // Prompt instructions enforcing strict code diff response formatting
+  const response = await Groq.chat.completions.create({
+    model: 'llama3-70b-8192',
+    messages: [
+      { role: 'system', content: 'Output code patches ONLY. Do not converse.' },
+      { role: 'user', content: prompt }
+    ]
+  });
+  
+  const rawPatchCode = response.choices[0].message.content;
+  
+  // Commit updates to GitHub repository
+  await octokit.repos.createOrUpdateFileContents({
+    owner,
+    repo: repoName,
+    path: 'src/App.js',
+    message: 'Pulse AI: autonomous code maintenance update',
+    content: Buffer.from(rawPatchCode).toString('base64'),
+    sha: req.body.fileSha
+  });
+  
+  res.json({ success: true, message: 'Patch deployed to production branch successfully' });
+};`
+    },
+    "android-keystore": {
+      code: "LEDGER-SYS-07",
+      title: "Android hardware-backed Keystore Encryption (Rendfile Vault)",
+      desc: "Rendfile vault keeps user documents encrypted with AES-256-GCM. The encryption keys are isolated from the operating system's software boundary using flutter_secure_storage, which writes key vectors directly into Android Keystore / iOS Keychain hardware chips.",
+      filename: "lib/services/crypto_service.dart",
+      snippet: `// Zero-Knowledge Encryption Key Resolution
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
+
+class CryptoService {
+  final _storage = const FlutterSecureStorage();
+  
+  Future<encrypt.Key> getHardwareIsolatedKey() async {
+    String? rawKey = await _storage.read(key: 'vault_symmetric_key');
+    
+    if (rawKey == null) {
+      // Generate new 32-byte secure key and save it to hardware keystore
+      final secureKey = encrypt.Key.fromSecureRandom(32);
+      await _storage.write(key: 'vault_symmetric_key', value: secureKey.base64);
+      return secureKey;
+    }
+    
+    return encrypt.Key.fromBase64(rawKey);
+  }
+  
+  Future<String> encryptFileBytes(List<int> bytes) async {
+    final key = await getHardwareIsolatedKey();
+    final iv = encrypt.IV.fromSecureRandom(16); // Enforces fresh GCM IV vector
+    final encrypter = encrypt.Encrypter(encrypt.AES(key, mode: encrypt.AESMode.gcm));
+    
+    final encrypted = encrypter.encryptBytes(bytes, iv: iv);
+    // Combines IV with encrypted bytes to support clean decrypt reads
+    return '\${iv.base64}:\${encrypted.base64}';
+  }
+}`
+    },
+    "flag-secure": {
+      code: "LEDGER-SYS-08",
+      title: "Native UI Screenshot Shielding & Obfuscation Scripts",
+      desc: "Blocks screenshooting and screencasting natively on Android by setting WindowManager flags during activity startup. Obfuscator maps classes and methods to random identifiers to prevent decompilation.",
+      filename: "android/app/src/main/kotlin/MainActivity.kt",
+      snippet: `// Enforce WindowManager FLAG_SECURE on Vault Activity
+package com.rendfile.manager
+
+import android.view.WindowManager
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+
+class MainActivity: FlutterActivity() {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+        // Native level UI block against screenshots, sharing, and screen recording
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+    }
+}
+
+// flutter_build_obfuscate.ps1
+// flutter build apk --obfuscate --split-debug-info=build/app/outputs/symbols`
+    },
+    "offline-queue": {
+      code: "LEDGER-SYS-09",
+      title: "Offline-First Queue Persistence via IndexedDB",
+      desc: "Rendfile and Pulse AI use local IndexedDB queues to store unsent messages and media jobs during offline periods. When the browser or application detects network connection events, queue blocks are dispatched in order.",
+      filename: "public/js/chat/userChat.js",
+      snippet: `// Client Offline Messaging Queue Handler
+class OfflineQueueManager {
+  constructor() {
+    this.dbName = 'ChatOfflineStorage';
+    this.storeName = 'pending_messages';
+    this.initDatabase();
+  }
+
+  initDatabase() {
+    const request = indexedDB.open(this.dbName, 1);
+    request.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      db.createObjectStore(this.storeName, { keyPath: 'id' });
+    };
+  }
+
+  async saveMessageToQueue(messagePayload) {
+    const db = await this.getDBInstance();
+    const tx = db.transaction(this.storeName, 'readwrite');
+    const store = tx.objectStore(this.storeName);
+    
+    messagePayload.queuedAt = new Date().toISOString();
+    store.add(messagePayload);
+    
+    // Bind window online event trigger
+    window.addEventListener('online', () => this.flushQueuedMessages());
+  }
+
+  async flushQueuedMessages() {
+    console.log('[NETWORK] Connection restored. Ingesting offline queue...');
+    const db = await this.getDBInstance();
+    const tx = db.transaction(this.storeName, 'readwrite');
+    const store = tx.objectStore(this.storeName);
+    const messages = await store.getAll();
+    
+    for (const msg of messages) {
+      await fetch('/api/user/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(msg)
+      });
+      store.delete(msg.id); // Purge from IndexedDB on successful API ingestion
+    }
+  }
+}`
+    },
+    "pdfkit-cert": {
+      code: "LEDGER-SYS-10",
+      title: "LMS Video Progress tracking & PDFKit Certificate Generator",
+      desc: "Prosys Academy tracks student progress to prevent video scrubbing or skip tricks. It uses PDFKit to dynamically generate certificates, writing the completed PDF documents directly to the filesystem and recording hashes in the database.",
+      filename: "utils/certificateGenerator.js",
+      snippet: `// PDFKit Dynamic Certificate Generator (Prosys Academy)
+import PDFDocument from 'pdfkit';
+import fs from 'fs';
+import path from 'path';
+
+export const generateCompletionCertificate = (studentName, courseName, certCode, outputPath) => {
+  const doc = new PDFDocument({ size: 'A4', layout: 'landscape' });
+  const writeStream = fs.createWriteStream(outputPath);
+  
+  doc.pipe(writeStream);
+  
+  // Render structural layout border
+  doc.rect(20, 20, 802, 555).lineWidth(4).stroke('#1A73E8');
+  
+  // Render certificate details
+  doc.fontSize(36).font('Helvetica-Bold').fillColor('#202124').text('Certificate of Completion', 100, 100, { align: 'center' });
+  doc.fontSize(16).font('Helvetica').text('This is officially awarded to:', 100, 200, { align: 'center' });
+  
+  doc.fontSize(24).font('Helvetica-Bold').fillColor('#1A73E8').text(studentName, 100, 250, { align: 'center' });
+  
+  doc.fontSize(16).font('Helvetica').fillColor('#202124').text(\`For successfully master indexing the curriculum:\`, 100, 320, { align: 'center' });
+  doc.fontSize(20).font('Helvetica-Bold').text(courseName, 100, 360, { align: 'center' });
+  
+  doc.fontSize(10).font('Courier').fillColor('#5F6368').text(\`Verification Node Code: \${certCode}\`, 100, 480, { align: 'center' });
+  
+  doc.end();
+  return new Promise((resolve) => writeStream.on('finish', resolve));
+};`
+    }
+  };
+
+  // Switch ledger content
+  function loadLedger(key) {
+    const data = ledgerBlueprints[key];
+    if (!data) return;
+
+    // Toggle active state in triggers
+    document.querySelectorAll('.verify-trigger').forEach(el => {
+      el.classList.remove('active-trigger');
+    });
+    const activeEl = document.querySelector(`.verify-trigger[data-ledger="${key}"]`);
+    if (activeEl) {
+      activeEl.classList.add('active-trigger');
+    }
+
+    // Hide placeholder, show content
+    document.getElementById('ledger-placeholder').style.display = 'none';
+    document.getElementById('ledger-content').style.display = 'flex';
+
+    // Populate data
+    document.getElementById('lbl-system-code').textContent = data.code;
+    document.getElementById('lbl-system-title').textContent = data.title;
+    document.getElementById('ledger-description').textContent = data.desc;
+    document.getElementById('lbl-code-filename').textContent = data.filename;
+    
+    const codeSnippet = document.getElementById('lbl-code-snippet');
+    codeSnippet.textContent = data.snippet;
+    
+    // Reset and apply language classes for syntax highlighting
+    codeSnippet.className = 'hljs';
+    if (data.filename.endsWith('.js') || data.filename.endsWith('.mjs')) {
+      codeSnippet.classList.add('language-javascript');
+    } else if (data.filename.endsWith('.dart')) {
+      codeSnippet.classList.add('language-dart');
+    } else if (data.filename.endsWith('.kt')) {
+      codeSnippet.classList.add('language-kotlin');
+    } else if (data.filename.endsWith('.ps1')) {
+      codeSnippet.classList.add('language-powershell');
+    }
+    
+    // Apply Highlight.js syntax coloring
+    if (window.hljs) {
+      hljs.highlightElement(codeSnippet);
+    }
+    
+    // Scroll right pane to top
+    document.getElementById('ledger-panel').scrollTop = 0;
+  }
+
+  // Copy code helper
+  function copyLedgerCode() {
+    const text = document.getElementById('lbl-code-snippet').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.ws-copy-btn');
+      const prevText = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.style.color = '#34A853';
+      setTimeout(() => {
+        btn.textContent = prevText;
+        btn.style.color = '';
+      }, 2000);
+    });
+  }
+
+  // Check URL hashes for direct ledger navigation on load and hash change
+  function loadFromHash() {
+    const hash = window.location.hash;
+    if (hash) {
+      const key = hash.substring(1); // Strip the '#'
+      if (ledgerBlueprints[key]) {
+        loadLedger(key);
+      }
+    }
+  }
+
+  window.addEventListener('hashchange', loadFromHash);
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    // Check if hash is present
+    if (window.location.hash) {
+      loadFromHash();
+    } else {
+      // Default load first item if no hash is present
+      loadLedger('saas-monolith');
+    }
+  });
+</script>

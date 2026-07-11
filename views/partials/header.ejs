@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Mutasim Billah — Systems Architect' %></title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <% if (typeof activePage !== 'undefined' && activePage === 'console') { %>
+    <link rel="stylesheet" href="/css/console.css" />
+  <% } %>
+  <% if (typeof activePage !== 'undefined' && activePage === 'contact') { %>
+    <link rel="stylesheet" href="/css/contact.css" />
+  <% } %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="/" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="/" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'home' ? 'active' : '' %>">Overview</a>
+          <a href="/skills" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'skills' ? 'active' : '' %>">Technical Stack & Toolkit</a>
+          <a href="/experience" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'experience' ? 'active' : '' %>">System Architectural Experience</a>
+          <a href="/verification" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'verification' ? 'active' : '' %>">Production Ledgers & Proofs</a>
+          <a href="/additional" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'additional' ? 'active' : '' %>">Certifications & Operations</a>
+          <a href="/console" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'console' ? 'active' : '' %>">Systems Console</a>
+          <a href="/contact" class="menu-link <%= typeof activePage !== 'undefined' && activePage === 'contact' ? 'active' : '' %>">Contact Portal</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>

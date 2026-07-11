@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+<main class="contact-page">
+  <div class="container contact-grid">
+    <!-- Left Column: Copy & Social Nodes -->
+    <div class="contact-copy">
+      <span class="legal-eyebrow">COMMUNICATION GATEWAY</span>
+      <h1>Send a Message</h1>
+      <p class="lead">Discuss systems architecture planning, cryptographic vault design, cross-platform app projects, or growth campaigns.</p>
+
+      <div class="channel-grid">
+        <div class="channel-card">
+          <span class="channel-label">LINKEDIN NETWORK NODE</span>
+          <a href="https://www.linkedin.com/" target="_blank" class="channel-link">
+            linkedin.com/in/mutasim-billah <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="channel-card">
+          <span class="channel-label">GITHUB REPOSITORY NODE</span>
+          <a href="https://github.com" target="_blank" class="channel-link">
+            github.com/mutasim-billah <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: GCP Styled Form Panel -->
+    <div class="contact-panel">
+      <div class="panel-header">
+        <h3>System Communication Ingestion</h3>
+      </div>
+      <div class="panel-body">
+        <form class="contact-form" id="contact-engine-form" onsubmit="submitEngineForm(event)">
+          
+          <div class="form-row">
+            <label class="form-label" for="form-name">Full Name</label>
+            <input type="text" name="name" id="form-name" placeholder="John Doe" required />
+          </div>
+          
+          <div class="form-row">
+            <label class="form-label" for="form-email">Email Address</label>
+            <input type="email" name="email" id="form-email" placeholder="you@example.com" required />
+          </div>
+          
+          <div class="form-row">
+            <label class="form-label" for="form-subject">Subject</label>
+            <input type="text" name="subject" id="form-subject" placeholder="Project inquiry" />
+          </div>
+          
+          <div class="form-row">
+            <label class="form-label" for="form-message">Message Details</label>
+            <textarea name="message" id="form-message" rows="5" placeholder="Outline your project scope, timeline, and architectural requirements..." required></textarea>
+          </div>
+
+          <!-- Simple status notification message -->
+          <div class="form-status-box" id="form-status-box" style="display: none;"></div>
+
+          <button type="submit" class="btn-g primary form-submit-btn" id="submit-btn">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
+
+<script src="/js/contact.js" defer></script>
