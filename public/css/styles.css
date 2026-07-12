@@ -1123,3 +1123,55 @@ a {
     text-align: center;
   }
 }
+
+/* Resume Download Card & Deep Shadow */
+.resume-download-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 10px 30px -5px rgba(32, 33, 36, 0.18);
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.resume-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.resume-card-left i {
+  font-size: 32px;
+  color: var(--google-red);
+}
+
+.resume-card-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.resume-card-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive collapse for resume card */
+@media (max-width: 768px) {
+  .resume-download-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .resume-card-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
