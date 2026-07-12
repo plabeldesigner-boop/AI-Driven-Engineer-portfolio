@@ -57,7 +57,101 @@
       <p>A structured mapping of my systems engineering toolkit, organized by operational layers.</p>
     </div>
 
+    <!-- Interactive System Architecture Blueprint -->
+    <div class="blueprint-section">
+      <div style="border-left: 3px solid var(--google-blue); padding-left: 12px; margin-bottom: 20px;">
+        <h3 style="font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Interactive System Architecture Blueprint</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Click on any architectural node in the blueprint below to view its specific security layers, state pipelines, and telemetry specifications.</p>
+      </div>
+
+      <!-- SVG Container -->
+      <div class="blueprint-svg-container">
+        <svg class="blueprint-svg" viewBox="0 0 800 290">
+          <defs>
+            <!-- Define markers for lines -->
+            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#DADCE0" />
+            </marker>
+          </defs>
+
+          <!-- Connection Arrows -->
+          <!-- Flutter Vault -> Express Engine -->
+          <path d="M 230 70 L 297 70" stroke="#DADCE0" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+          <!-- Express Engine -> Redis Sockets -->
+          <path d="M 495 70 L 562 70" stroke="#DADCE0" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+          <!-- Flutter Vault -> Cloudflare R2 -->
+          <path d="M 135 110 L 135 172" stroke="#DADCE0" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+          <!-- Express Engine -> MongoDB Store -->
+          <path d="M 400 110 L 400 172" stroke="#DADCE0" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+          <!-- Cloudflare R2 -> Express Ingestion -->
+          <path d="M 230 220 L 297 100" stroke="#DADCE0" stroke-dasharray="4" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+          <!-- Group 1: Flutter Vault app -->
+          <g class="blueprint-node" id="node-flutter-vault" onclick="showBlueprintNode('flutter-vault')">
+            <rect x="40" y="30" width="190" height="80" rx="6" />
+            <text x="54" y="52" fill="#5F6368" font-size="9" font-family="monospace" font-weight="bold">SYS-07 / SYS-08</text>
+            <text x="54" y="70" font-size="13" font-weight="bold" fill="var(--text-dark)">Flutter Secure Vault</text>
+            <text x="54" y="90" font-size="10" fill="#5F6368">Keystore & FLAG_SECURE</text>
+          </g>
+
+          <!-- Group 2: Express 5 Engine -->
+          <g class="blueprint-node" id="node-express-engine" onclick="showBlueprintNode('express-engine')">
+            <rect x="305" y="30" width="190" height="80" rx="6" />
+            <text x="319" y="52" fill="#5F6368" font-size="9" font-family="monospace" font-weight="bold">SYS-01 / SYS-03 / SYS-05</text>
+            <text x="319" y="70" font-size="13" font-weight="bold" fill="var(--text-dark)">Express 5 Monolith</text>
+            <text x="319" y="90" font-size="10" fill="#5F6368">CSRF, ClamAV, Rate Limiting</text>
+          </g>
+
+          <!-- Group 3: Redis PubSub -->
+          <g class="blueprint-node" id="node-redis-pubsub" onclick="showBlueprintNode('redis-pubsub')">
+            <rect x="570" y="30" width="190" height="80" rx="6" />
+            <text x="584" y="52" fill="#5F6368" font-size="9" font-family="monospace" font-weight="bold">SYS-02 / SYS-09</text>
+            <text x="584" y="70" font-size="13" font-weight="bold" fill="var(--text-dark)">Redis Sockets Cluster</text>
+            <text x="584" y="90" font-size="10" fill="#5F6368">Stateless Pub/Sub Channels</text>
+          </g>
+
+          <!-- Group 4: Cloudflare R2 -->
+          <g class="blueprint-node" id="node-cloudflare-r2" onclick="showBlueprintNode('cloudflare-r2')">
+            <rect x="40" y="180" width="190" height="80" rx="6" />
+            <text x="54" y="202" fill="#5F6368" font-size="9" font-family="monospace" font-weight="bold">SYS-04</text>
+            <text x="54" y="220" font-size="13" font-weight="bold" fill="var(--text-dark)">Cloudflare R2 Storage</text>
+            <text x="54" y="240" font-size="10" fill="#5F6368">Expirable cron pre-signed URLs</text>
+          </g>
+
+          <!-- Group 5: MongoDB Session -->
+          <g class="blueprint-node" id="node-mongodb-session" onclick="showBlueprintNode('mongodb-session')">
+            <rect x="305" y="180" width="190" height="80" rx="6" />
+            <text x="319" y="202" fill="#5F6368" font-size="9" font-family="monospace" font-weight="bold">SYS-10</text>
+            <text x="319" y="220" font-size="13" font-weight="bold" fill="var(--text-dark)">MongoDB Stateless persistence</text>
+            <text x="319" y="240" font-size="10" fill="#5F6368">Mongoose collections & sessions</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Node Specification Details Card -->
+      <div class="blueprint-details-card" id="blueprint-details-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-light); padding-bottom: 12px; margin-bottom: 16px;">
+          <div>
+            <span class="legal-eyebrow" style="color: var(--google-blue);">ACTIVE NODE ARCHITECTURAL SPECIFICATION</span>
+            <h3 id="bp-title" style="font-size: 16px; margin: 0; font-weight: 600; color: var(--text-dark);">Node Title</h3>
+          </div>
+          <span class="claim-status" style="font-size: 9px; font-weight: 700; color: #137333; background-color: #E6F4EA; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.3px;">ACTIVE SPEC</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+          <p style="margin-bottom: 8px;"><strong>Core Protocols / Tech:</strong> <span id="bp-protocols" style="color: var(--text-dark); font-family: monospace; font-weight: 600;">-</span></p>
+          <p style="margin-bottom: 16px;" id="bp-desc">Click a node to view specification logs.</p>
+          <a href="#" id="bp-link" class="btn-g primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; font-size: 12px;">
+            <i class="fa-solid fa-file-code"></i> View Code Ledger
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- GCP-style Matrix Grid -->
+    <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 12px; margin-bottom: 24px; margin-top: 64px;">
+      <h3 style="font-size: 18px; font-weight: 500; color: var(--text-dark); margin: 0;">Detailed Technology Catalog</h3>
+    </div>
+    
     <div class="matrix-grid">
       <!-- Category 1 -->
       <div class="matrix-card">
@@ -113,5 +207,68 @@
       </div>
     </div>
   </footer>
+
+<script>
+  const nodeDetails = {
+    "flutter-vault": {
+      title: "Flutter Android Security Vault (SYS-07 / SYS-08)",
+      protocols: "AES-256-GCM, PBKDF2, Android Keystore API, WindowManager.LayoutParams",
+      desc: "Isolated symmetric key resolution boundaries inside mobile device chips. Native WindowManager FLAG_SECURE flags block screenshots and video recordings in real-time, preventing sensitive data exposure. Enforces decoy vault subsystems via dual-state PIN logic and anti-decompilation code obfuscation.",
+      link: "../verification/#android-keystore"
+    },
+    "express-engine": {
+      title: "Express 5 Backend Monolith Engine (SYS-01 / SYS-03 / SYS-05)",
+      protocols: "HTTPS, Passport-JWT, crypto.timingSafeEqual(), express-rate-limit",
+      desc: "Express 5 monolith boot lifecycle coordinating env validation, rate limiting pipelines, CSRF token verification, and in-memory ClamAV antivirus file buffer scans prior to edge persistence. Immunic to timing attacks via constant-time buffer matches.",
+      link: "../verification/#saas-monolith"
+    },
+    "redis-pubsub": {
+      title: "Redis Sockets Cluster & Offline-First Queue (SYS-02 / SYS-09)",
+      protocols: "Redis TCP, Socket.IO Redis Adapter, IndexedDB API",
+      desc: "Horizontal multi-server socket channels broadcasting live chat notifications (read receipts, online statuses) across decoupled worker instances with fallback routing. Leverages local IndexedDB queues to store unsent actions offline and sync them on connection restore.",
+      link: "../verification/#redis-pubsub"
+    },
+    "cloudflare-r2": {
+      title: "Cloudflare R2 Storage Ingestion (SYS-04)",
+      protocols: "S3 API, Expirable Pre-signed URLs, Node setInterval",
+      desc: "Edge-based media ingestion handling client layouts. Expired folders are cleaned automatically every 30 minutes via background Node cron tasks (previewCleanup.js) to destroy expired live-preview assets from edge nodes.",
+      link: "../verification/#r2-cleanup"
+    },
+    "mongodb-session": {
+      title: "MongoDB Stateless Persistence & Progress tracker (SYS-10)",
+      protocols: "Mongoose ODM, connect-mongo session-store, PDFKit",
+      desc: "Enforces stateless request lifecycles by storing session data in collections, while hosting curriculum video progress skip-block trackers and certificate validation hashes. Generates PDFs dynamically on complete completions.",
+      link: "../verification/#pdfkit-cert"
+    }
+  };
+
+  function showBlueprintNode(id) {
+    const data = nodeDetails[id];
+    if (!data) return;
+
+    // Toggle active state in SVG nodes
+    document.querySelectorAll('.blueprint-node').forEach(node => {
+      node.classList.remove('active');
+    });
+    const activeNode = document.getElementById(`node-${id}`);
+    if (activeNode) {
+      activeNode.classList.add('active');
+    }
+
+    // Update details card
+    document.getElementById('bp-title').textContent = data.title;
+    document.getElementById('bp-protocols').textContent = data.protocols;
+    document.getElementById('bp-desc').textContent = data.desc;
+    document.getElementById('bp-link').setAttribute('href', data.link);
+
+    // Show details card
+    document.getElementById('blueprint-details-card').classList.add('active');
+  }
+
+  // Load Express Engine specifications by default on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    showBlueprintNode('express-engine');
+  });
+</script>
 </body>
 </html>

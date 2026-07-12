@@ -1175,3 +1175,66 @@ a {
     gap: 12px;
   }
 }
+
+/* Interactive Blueprint Section */
+.blueprint-section {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.blueprint-svg-container {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  background-color: var(--bg-tinted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.blueprint-svg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.blueprint-node {
+  cursor: pointer;
+}
+
+.blueprint-node rect {
+  fill: var(--bg-white);
+  stroke: var(--border-light);
+  stroke-width: 1.5px;
+}
+
+.blueprint-node:hover rect {
+  stroke: var(--google-blue);
+  fill: var(--surface-hover);
+}
+
+.blueprint-node.active rect {
+  stroke: var(--google-blue);
+  fill: #E8F0FE;
+  stroke-width: 2px;
+}
+
+.blueprint-node.active text {
+  fill: var(--google-blue);
+  font-weight: 600;
+}
+
+.blueprint-details-card {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--bg-white);
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(32, 33, 36, 0.06);
+  display: none;
+}
+
+.blueprint-details-card.active {
+  display: block;
+}
