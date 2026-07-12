@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zero-Trust Boundaries in Web Monoliths — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="../../public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="../../" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="../../" class="menu-link">Overview</a>
+          <a href="../../skills/" class="menu-link">Technical Stack & Toolkit</a>
+          <a href="../../experience/" class="menu-link">System Architectural Experience</a>
+          <a href="../../verification/" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="../../additional/" class="menu-link">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="blog-detail-page" style="padding-top: 104px; max-width: 800px; margin: 0 auto; padding-bottom: 64px; padding-left: 24px; padding-right: 24px;">
+  <a href="../" style="text-decoration: none; color: var(--google-blue); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">
+    <i class="fa-solid fa-arrow-left"></i> Back to Logs
+  </a>
+
+  <article>
+    <header style="margin-bottom: 32px;">
+      <span style="font-size: 10px; font-weight: 700; color: var(--google-red); background-color: #fce8e6; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">CYBERSECURITY</span>
+      <h1 style="font-size: 28px; font-weight: 600; color: var(--text-dark); line-height: 1.25; margin-bottom: 12px;">
+        Zero-Trust Boundaries in Web Monoliths
+      </h1>
+      <div style="font-size: 13px; color: var(--text-muted);">Published on June 28, 2026 by Mutasim Billah</div>
+    </header>
+
+    <div style="font-size: 15px; color: #3c4043; line-height: 1.7; display: flex; flex-direction: column; gap: 16px;">
+      <p>
+        Building digital systems for enterprise use cases requires an absolute commitment to security. Traditional architectures often rely solely on edge firewalls, leaving the internal application layer vulnerable.
+      </p>
+      <p>
+        A zero-trust backend framework assumes that every network request, file stream, and data packet is a potential threat. In our Express 5 architectures, we establish strict validation checkpoints at every stage:
+      </p>
+      <ul>
+        <li><strong>CSRF Immunity:</strong> Double-submit cookies checked using Node’s native constant-time comparisons (`crypto.timingSafeEqual`) to block token timing leaks.</li>
+        <li><strong>Hardware Cryptographic Boundaries:</strong> Storing client vaults and AES credentials inside physical chips (Android KeyStore and iOS KeyChain) to prevent operating system memory sniffs.</li>
+        <li><strong>Upload Telemetry Buffers:</strong> Intercepting files in memory before saving them to disk, passing them directly to ClamAV daemons, and instantly deleting infected assets.</li>
+      </ul>
+      <p>
+        By combining hardware isolation on mobile frontends with strict memory validation and sandboxing on backend monoliths, we ensure that vulnerabilities are mitigated at the boundary level before they can propagate.
+      </p>
+    </div>
+  </article>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

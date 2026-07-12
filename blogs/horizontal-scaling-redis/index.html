@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horizontal Scaling with Redis Pub/Sub Clusters — Mutasim Billah</title>
+  <meta name="description" content="Mutasim Billah — AI Systems Architect & Founder. Engineering robust, fault-tolerant enterprise systems with GenAI, security and scalability." />
+  <link rel="stylesheet" href="../../public/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="../../" class="brand-title">MUTASIM BILLAH</a>
+        <span class="brand-badge">SYSTEMS ARCHITECT</span>
+      </div>
+      
+      <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenuDrawer(event)">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <div class="menu-drawer" id="menu-drawer">
+          <a href="../../" class="menu-link">Overview</a>
+          <a href="../../skills/" class="menu-link">Technical Stack & Toolkit</a>
+          <a href="../../experience/" class="menu-link">System Architectural Experience</a>
+          <a href="../../verification/" class="menu-link">Production Ledgers & Proofs</a>
+          <a href="../../additional/" class="menu-link">Certifications & Operations</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenuDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('menu-drawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const drawer = document.getElementById('menu-drawer');
+      const menuBtn = document.querySelector('.menu-btn');
+      if (drawer && !drawer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    });
+  </script>
+
+<main class="blog-detail-page" style="padding-top: 104px; max-width: 800px; margin: 0 auto; padding-bottom: 64px; padding-left: 24px; padding-right: 24px;">
+  <a href="../" style="text-decoration: none; color: var(--google-blue); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">
+    <i class="fa-solid fa-arrow-left"></i> Back to Logs
+  </a>
+
+  <article>
+    <header style="margin-bottom: 32px;">
+      <span style="font-size: 10px; font-weight: 700; color: var(--google-green); background-color: #e6f4ea; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.5px; display: inline-block; margin-bottom: 16px;">SCALABILITY</span>
+      <h1 style="font-size: 28px; font-weight: 600; color: var(--text-dark); line-height: 1.25; margin-bottom: 12px;">
+        Horizontal Scaling with Redis Pub/Sub Clusters
+      </h1>
+      <div style="font-size: 13px; color: var(--text-muted);">Published on May 15, 2026 by Mutasim Billah</div>
+    </header>
+
+    <div style="font-size: 15px; color: #3c4043; line-height: 1.7; display: flex; flex-direction: column; gap: 16px;">
+      <p>
+        Monolithic architectures provide excellent write/read speeds and simple project structures. However, as user traffic scales, a single server instance becomes a bottleneck. To scale horizontally, we must decouple server states.
+      </p>
+      <p>
+        Stateless session routing is the first step. By utilizing database-backed session stores (like MongoDB via connect-mongo), user authentication sessions can be resolved regardless of which server instance receives the HTTP request.
+      </p>
+      <p>
+        The real challenge lies in persistent connections, such as WebSockets. If User A is connected to Server Node 1, and User B is connected to Server Node 2, they cannot communicate directly through memory.
+      </p>
+      <p>
+        To solve this, we configure a **Redis Pub/Sub adapter** for Socket.IO. When a message is sent, the local server publishes the payload to a Redis channel. Every other server node, listening to Redis, receives the event and broadcasts it to its local connected clients.
+      </p>
+      <p>
+        This ensures seamless delivery of real-time events (including read receipts, typing notifications, and live status states) across decentralized multi-process clusters without bottlenecking application memory.
+      </p>
+    </div>
+  </article>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copyright">&copy; 2026 Mutasim Billah. All rights reserved. Islamic International University (IIUI).</span>
+      <div class="footer-links">
+        <a href="https://github.com/plabeldesigner-boop/AI-Driven-Engineer-portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
